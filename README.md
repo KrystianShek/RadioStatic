@@ -12,6 +12,8 @@
 
 *Designed by **Krystian Shek***
 
+<img src="assets/RadioStatic.png"/> 
+
 </div>
 
 ---
