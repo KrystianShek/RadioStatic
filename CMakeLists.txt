@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.22)
 project(RadioStatic VERSION 1.0.0)
 
-# JUCE (Version 8) als Unterordner "JUCE/" neben diese Datei legen:
-#   git clone https://github.com/juce-framework/JUCE.git
+# JUCE (Version 8) ist als Git-Submodule unter "JUCE/" eingebunden:
+#   git submodule update --init
 add_subdirectory(JUCE)
 
 juce_add_plugin(RadioStatic
