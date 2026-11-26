@@ -108,18 +108,42 @@ name and rebuild the plugin. The sentences are detected again automatically.
   Linux: GCC/Clang)
 - [JUCE 8](https://github.com/juce-framework/JUCE), included as a git submodule in `JUCE/`
 
+### Linux Dependencies
+
+Fedora:
+
+```bash
+sudo dnf install gcc-c++ cmake make git pkgconf-pkg-config alsa-lib-devel freetype-devel fontconfig-devel libX11-devel libXcomposite-devel libXcursor-devel libXext-devel libXinerama-devel libXrandr-devel libXrender-devel
+```
+
+Ubuntu / Debian:
+
+```bash
+sudo apt install g++ cmake make git pkg-config libasound2-dev libfreetype-dev libfontconfig1-dev libx11-dev libxcomposite-dev libxcursor-dev libxext-dev libxinerama-dev libxrandr-dev libxrender-dev
+```
+
+> 💡 On atomic distributions (e.g. Fedora Silverblue or Aurora), you can build inside a
+> [Distrobox](https://distrobox.it) container:
+> `distrobox create --name juce --image registry.fedoraproject.org/fedora-toolbox:44`,
+> then `distrobox enter juce` and install the Fedora packages there.
+
 ### Steps
+
+The commands are the same on Linux, macOS and Windows:
 
 ```bash
 # 1) Fetch the JUCE submodule (run inside the cloned repository)
 git submodule update --init
 
 # 2) Configure
-cmake -B build
+cmake -B build -DCMAKE_BUILD_TYPE=Release
 
 # 3) Build
-cmake --build build --config Release
+cmake --build build --config Release --parallel
 ```
+
+On macOS, add `-DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"` to the configure step to build a
+universal binary for Apple Silicon and Intel.
 
 You will then find the finished plugin at:
 
@@ -136,6 +160,7 @@ Copy the `.vst3` into your VST3 folder and have your DAW rescan for plugins:
 | Linux | `~/.vst3` |
 
 A **standalone** application is built as well, so you can try out the effect without a DAW.
+You will find it in `build/RadioStatic_artefacts/Release/Standalone/`.
 
 ---
 
