@@ -106,13 +106,13 @@ name and rebuild the plugin. The sentences are detected again automatically.
 - [CMake](https://cmake.org) 3.22 or newer
 - A C++ compiler (Windows: Visual Studio with "Desktop development with C++", macOS: Xcode,
   Linux: GCC/Clang)
-- [JUCE 8](https://github.com/juce-framework/JUCE) as a subfolder `JUCE/`
+- [JUCE 8](https://github.com/juce-framework/JUCE), included as a git submodule in `JUCE/`
 
 ### Steps
 
 ```bash
-# 1) Clone JUCE next to CMakeLists.txt
-git clone https://github.com/juce-framework/JUCE.git
+# 1) Fetch the JUCE submodule (run inside the cloned repository)
+git submodule update --init
 
 # 2) Configure
 cmake -B build
@@ -144,7 +144,7 @@ A **standalone** application is built as well, so you can try out the effect wit
 ```
 RadioStatic/
 ├── CMakeLists.txt            Build configuration (incl. embedded voice recording)
-├── JUCE/                     JUCE framework (clone it yourself)
+├── JUCE/                     JUCE framework (git submodule)
 ├── Resources/
 │   └── voice.wav             embedded radio voice
 └── Source/
