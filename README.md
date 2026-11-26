@@ -139,7 +139,7 @@ git submodule update --init
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 
 # 3) Build
-cmake --build build --config Release --parallel
+cmake --build build --config Release --parallel 4
 ```
 
 On macOS, add `-DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"` to the configure step to build a
