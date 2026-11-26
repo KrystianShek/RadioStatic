@@ -2,8 +2,8 @@
 
 # 📻 RadioStatic
 
-### Knacken · Rauschen · Pfeifen · Fading · Funkstimmen
-**Das Mittelwellen- & Kurzwellen-Feeling als VST3-Effekt-Plugin**
+### Crackle · Noise · Whistles · Fading · Radio Voices
+**The medium wave & shortwave feeling as a VST3 effect plugin**
 
 [![Made with Claude](https://img.shields.io/badge/Made%20with-Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.ai)
 [![Format](https://img.shields.io/badge/Format-VST3-FF9F1C?style=for-the-badge)](#)
@@ -16,15 +16,15 @@
 
 ---
 
-## ✨ Was ist RadioStatic?
+## ✨ What is RadioStatic?
 
-RadioStatic schickt dein Signal durch ein altes Radio – oder besser gesagt: mitten hinein in
-die Störungen zwischen zwei Sendern. Du schaltest zwischen **Mittelwelle (MW)** und
-**Kurzwelle (SW)** um, drehst am **Mix**-Regler und bestimmst selbst, wie viel Äther-Chaos
-zu deinem Sound hinzukommt.
+RadioStatic sends your signal through an old radio – or rather, right into the middle of the
+interference between two stations. You switch between **medium wave (MW)** and
+**shortwave (SW)**, turn the **Mix** knob and decide for yourself how much chaos from the
+airwaves gets added to your sound.
 
-Perfekt für Lo-Fi-Intros, Film- und Hörspiel-Atmosphäre, Spionage-Vibes, „Zahlensender“-Stimmung
-oder einfach, um einen zu sauberen Mix mit etwas Patina zu versehen.
+Perfect for lo-fi intros, film and radio drama atmospheres, spy vibes, a "numbers station" mood,
+or simply to give an overly clean mix a bit of patina.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -41,157 +41,156 @@ oder einfach, um einen zu sauberen Mix mit etwas Patina zu versehen.
 │                       Designed by Krystian Shek              │
 └──────────────────────────────────────────────────────────────┘
 ```
-<sub>Schematische Darstellung – die echte Oberfläche ist eine leuchtende Glasskala mit
-Metallreglern und LED-Ringen im Retro-Look.</sub>
+<sub>Schematic illustration – the actual interface is a glowing glass dial with
+metal knobs and LED rings in a retro look.</sub>
 
 ---
 
-## 🎛️ Bedienung
+## 🎛️ Controls
 
-| Regler | Standard | Was er macht |
+| Control | Default | What it does |
 |---|:---:|---|
-| **MEDIUM WAVE / SHORTWAVE** | MW | Schiebeschalter. Wechselt den Charakter der Störungen (siehe unten). |
-| **MIX** | 35 % | Wie viel Radio-Klang samt Störungen zu deinem Signal gemischt wird. 0 % = sauber, 100 % = voll im Äther. |
-| **NOISE** | 50 % | Rauschen – bei Kurzwelle mit „wuschelndem“, wanderndem Filter. |
-| **CRACKLE** | 50 % | Knacken und atmosphärische Entladungen, in Schüben wie bei einem fernen Gewitter. |
-| **WHISTLE** | 30 % | Heterodyn-Pfeiftöne von Nachbarsendern, die ein- und ausblenden und gleiten. |
-| **FADING** | 40 % | Lautstärke-Schwund des Signals, wie es bei weit entfernten Sendern typisch ist. |
-| **VOICES** | 25 % | Ab und zu zerhackte Funkstimmen. Höher = häufigere und stärker verzerrte Durchsagen. |
+| **MEDIUM WAVE / SHORTWAVE** | MW | Slide switch. Changes the character of the interference (see below). |
+| **MIX** | 35 % | How much of the radio sound, including interference, is mixed into your signal. 0 % = clean, 100 % = fully on air. |
+| **NOISE** | 50 % | Static noise – on shortwave with a swirling, wandering filter. |
+| **CRACKLE** | 50 % | Crackles and atmospheric discharges, in bursts like a distant thunderstorm. |
+| **WHISTLE** | 30 % | Heterodyne whistles from neighbouring stations that fade in and out and glide. |
+| **FADING** | 40 % | Drop-outs in signal volume, as typical for far-away stations. |
+| **VOICES** | 25 % | Chopped-up radio voices every now and then. Higher = more frequent and more heavily distorted transmissions. |
 
-> 💡 **Tipp:** Doppelklick auf einen Regler setzt ihn auf den Standardwert zurück.
-> Das Fenster lässt sich frei skalieren.
+> 💡 **Tip:** Double-click a knob to reset it to its default value.
+> The window can be resized freely.
 
-### MW oder SW?
+### MW or SW?
 
-| | 📡 Mittelwelle | 🌍 Kurzwelle |
+| | 📡 Medium wave | 🌍 Shortwave |
 |---|---|---|
-| **Klang** | breiter, gleichmäßiger | schmalbandiger, „weiter weg“ |
-| **Rauschen** | konstant | wandernd, wuschelig |
-| **Knacken** | häufig, in Schüben | seltener |
-| **Pfeifen** | stabile Töne | wild gleitende Töne |
-| **Fading** | langsam und sanft | schnell und unregelmäßig |
+| **Sound** | wider, more even | narrow-band, "further away" |
+| **Noise** | constant | wandering, swirling |
+| **Crackle** | frequent, in bursts | less frequent |
+| **Whistles** | stable tones | wildly gliding tones |
+| **Fading** | slow and gentle | fast and irregular |
 
-### Die Anzeige lebt
+### The display is alive
 
-Die Nadel auf der Skala wandert wie bei einem Sendersuchlauf, und darunter läuft live die
-Kurve der Störungen mit. Je mehr Mix, desto wilder der Ausschlag.
-
----
-
-## 🎙️ Funkstimmen
-
-Der Regler **VOICES** spielt zufällig kurze „Durchsagen“ ab, die aus einer **eingebetteten
-Sprachaufnahme** stammen (`Resources/voice.wav`). Das Plugin zerlegt die Aufnahme automatisch
-an den Sprechpausen in Sätze und spielt pro Durchsage 1–3 davon ab. Sie werden dabei wie echter
-Funkverkehr behandelt:
-
-- 📞 Bandbegrenzung auf Sprechfunk-Bereich (ca. 380–2600 Hz)
-- 🔥 starke Übersteuerung für den harten, komprimierten Funk-Sound
-- 🧱 Sample-Rate-Crunch für körnige, digitale Übertragungsartefakte
-- 🔔 *Squelch*-Klick am Anfang und „kschhk“ am Ende jeder Durchsage
-- 🌫️ leise rauschender, offener Träger während der Durchsage
-- 🌊 Fading blendet die Stimmen ein und aus
-
-**Eigene Stimme verwenden:** Ersetze einfach `Resources/voice.wav` durch eine beliebige
-WAV-Datei mit demselben Namen und baue das Plugin neu. Die Sätze werden automatisch neu erkannt.
+The needle on the dial wanders as if scanning for stations, and below it the interference
+waveform runs live. The higher the mix, the wilder the swing.
 
 ---
 
-## 🔧 Selbst bauen
+## 🎙️ Radio Voices
 
-### Voraussetzungen
+The **VOICES** knob randomly plays short "transmissions" taken from an **embedded
+voice recording** (`Resources/voice.wav`). The plugin automatically splits the recording into
+sentences at the speech pauses and plays 1–3 of them per transmission. They are treated like
+real radio traffic:
 
-- [CMake](https://cmake.org) 3.22 oder neuer
-- Ein C++-Compiler (Windows: Visual Studio mit „Desktopentwicklung mit C++“, macOS: Xcode,
+- 📞 Band-limited to the voice radio range (approx. 380–2600 Hz)
+- 🔥 Heavy overdrive for that harsh, compressed radio sound
+- 🧱 Sample rate crunch for grainy, digital transmission artefacts
+- 🔔 *Squelch* click at the start and a "kshhk" at the end of every transmission
+- 🌫️ Quietly hissing open carrier during the transmission
+- 🌊 Fading brings the voices in and out
+
+**Using your own voice:** Simply replace `Resources/voice.wav` with any WAV file of the same
+name and rebuild the plugin. The sentences are detected again automatically.
+
+---
+
+## 🔧 Building from Source
+
+### Requirements
+
+- [CMake](https://cmake.org) 3.22 or newer
+- A C++ compiler (Windows: Visual Studio with "Desktop development with C++", macOS: Xcode,
   Linux: GCC/Clang)
-- [JUCE 8](https://github.com/juce-framework/JUCE) als Unterordner `JUCE/`
+- [JUCE 8](https://github.com/juce-framework/JUCE) as a subfolder `JUCE/`
 
-### Schritte
+### Steps
 
 ```bash
-# 1) JUCE neben die CMakeLists.txt klonen
+# 1) Clone JUCE next to CMakeLists.txt
 git clone https://github.com/juce-framework/JUCE.git
 
-# 2) Konfigurieren
+# 2) Configure
 cmake -B build
 
-# 3) Bauen
+# 3) Build
 cmake --build build --config Release
 ```
 
-Das fertige Plugin liegt danach unter:
+You will then find the finished plugin at:
 
 ```
 build/RadioStatic_artefacts/Release/VST3/RadioStatic.vst3
 ```
 
-Kopiere die `.vst3` in deinen VST3-Ordner und lass die DAW neu nach Plugins suchen:
+Copy the `.vst3` into your VST3 folder and have your DAW rescan for plugins:
 
-| System | VST3-Ordner |
+| System | VST3 folder |
 |---|---|
 | Windows | `C:\Program Files\Common Files\VST3` |
 | macOS | `/Library/Audio/Plug-Ins/VST3` |
 | Linux | `~/.vst3` |
 
-Zusätzlich entsteht ein **Standalone**-Programm, mit dem du den Effekt auch ohne DAW
-ausprobieren kannst.
+A **standalone** application is built as well, so you can try out the effect without a DAW.
 
 ---
 
-## 🗂️ Projektstruktur
+## 🗂️ Project Structure
 
 ```
 RadioStatic/
-├── CMakeLists.txt            Build-Konfiguration (inkl. eingebetteter Sprachaufnahme)
-├── JUCE/                     JUCE-Framework (selbst klonen)
+├── CMakeLists.txt            Build configuration (incl. embedded voice recording)
+├── JUCE/                     JUCE framework (clone it yourself)
 ├── Resources/
-│   └── voice.wav             eingebettete Funkstimme
+│   └── voice.wav             embedded radio voice
 └── Source/
-    ├── PluginProcessor.h/.cpp   Klang: Rauschen, Knacken, Pfeifen, Fading, Funkstimmen
-    ├── PluginEditor.h/.cpp      Oberfläche: Layout und Metall-Hintergrund
-    └── UiComponents.h           Glasskala, Schiebeschalter, Regler mit LED-Ring
+    ├── PluginProcessor.h/.cpp   Sound: noise, crackle, whistles, fading, radio voices
+    ├── PluginEditor.h/.cpp      Interface: layout and metal background
+    └── UiComponents.h           Glass dial, slide switch, knobs with LED ring
 ```
 
-### Klang justieren
+### Tweaking the Sound
 
-Die wichtigsten Stellschrauben stehen direkt im Code in `PluginProcessor.cpp`:
+The most important parameters are located directly in the code in `PluginProcessor.cpp`:
 
-- **Lautstärke der Funkstimmen:** Zeile mit `chatLevel`
-- **Charakter von MW und SW** (Bandbreite, Knack-Dichte, Fading-Tempo): Block am Anfang von `processBlock`
-- **Pausen zwischen den Durchsagen:** Funktion `next` in `RadioVoice` (`PluginProcessor.h`)
-
----
-
-## 🛠️ Technik in Kürze
-
-- **Rauschen:** gefiltertes Weißrauschen, bei SW mit wanderndem Tiefpass
-- **Knacken:** zufällige Impulse mit kurzer Abklingzeit, in Gewitter-artigen Schüben
-- **Pfeifen:** zwei driftende Sinus-Oszillatoren mit zufälligem Ein- und Ausblenden
-- **Fading:** drei überlagerte langsame Modulatoren (unregelmäßiger Schwund)
-- **Radio-Klang:** Band-Begrenzung aus je zwei Hoch- und Tiefpässen plus sanfte Sättigung
-- **Anzeige:** Oszilloskop-Daten und Nadelposition werden thread-sicher vom Audio-Thread an die
-  Oberfläche übergeben
+- **Volume of the radio voices:** line with `chatLevel`
+- **Character of MW and SW** (bandwidth, crackle density, fading speed): block at the beginning of `processBlock`
+- **Pauses between transmissions:** function `next` in `RadioVoice` (`PluginProcessor.h`)
 
 ---
 
-## 🤖 Entstehung
+## 🛠️ Tech in Brief
 
-Dieses Plugin wurde gemeinsam mit **[Claude](https://claude.ai)** von Anthropic entwickelt:
-Der gesamte Code (Klangerzeugung, Oberfläche und Build-System) entstand im Dialog mit Claude.
-Das Design stammt von **Krystian Shek**.
+- **Noise:** filtered white noise, with a wandering low-pass on SW
+- **Crackle:** random impulses with a short decay, in thunderstorm-like bursts
+- **Whistles:** two drifting sine oscillators with random fade-ins and fade-outs
+- **Fading:** three superimposed slow modulators (irregular signal loss)
+- **Radio sound:** band limiting with two high-pass and two low-pass filters plus gentle saturation
+- **Display:** oscilloscope data and needle position are passed from the audio thread to the
+  interface in a thread-safe way
+
+---
+
+## 🤖 Origin
+
+This plugin was developed together with **[Claude](https://claude.ai)** by Anthropic:
+all of the code (sound generation, interface and build system) was created in conversation
+with Claude. The design is by **Krystian Shek**.
 
 [![Made with Claude](https://img.shields.io/badge/Code%20written%20with-Claude-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://claude.ai)
 
 ---
 
-## ⚠️ Hinweise
+## ⚠️ Notes
 
-- Die eingebettete Sprachaufnahme wurde mit einem KI-Stimmengenerator erzeugt. Prüfe vor einer
-  Veröffentlichung oder einem Verkauf des Plugins, ob die Lizenz deines Tarifs die kommerzielle
-  Nutzung der Stimme erlaubt – oder tausche die Aufnahme gegen eine eigene aus.
-- Das Plugin ist ein Effekt zur kreativen Klanggestaltung. Beginne mit niedrigen Pegeln, denn
-  Knackser und Funkstimmen können kurzzeitig laut werden.
-- Eine Lizenz für den Quellcode ist noch festzulegen.
+- The embedded voice recording was created with an AI voice generator. Before publishing or
+  selling the plugin, check whether the license of your plan permits commercial use of the
+  voice – or replace the recording with your own.
+- The plugin is an effect for creative sound design. Start at low levels, as crackles and
+  radio voices can get loud for brief moments.
+- The source code is released under the MIT License – see [LICENSE](LICENSE).
 
 ---
 
@@ -199,6 +198,6 @@ Das Design stammt von **Krystian Shek**.
 
 **RadioStatic** · Designed by Krystian Shek · Code written with Claude
 
-*„Between the stations, that's where the magic is.“*
+*"Between the stations, that's where the magic is."*
 
 </div>
